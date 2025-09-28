@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on Abhijeet&#39;s site</title>
+    <link>https://abhirudraa.github.io/tags/test/</link>
+    <description>Recent content in Test on Abhijeet&#39;s site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Sep 2025 18:00:00 +0530</lastBuildDate>
+    <atom:link href="https://abhirudraa.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Test Hugo Blog Post</title>
+      <link>https://abhirudraa.github.io/blog/test-post/</link>
+      <pubDate>Sun, 28 Sep 2025 18:00:00 +0530</pubDate>
+      <guid>https://abhirudraa.github.io/blog/test-post/</guid>
+      <description>&lt;p&gt;This is a &lt;strong&gt;dummy post&lt;/strong&gt; to test Hugo and GitHub Pages deployment.&lt;/p&gt;&#xA;&lt;p&gt;Markdown works fine.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

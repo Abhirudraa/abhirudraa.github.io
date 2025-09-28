@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Deploying a Hugo Blog with GitHub Actions and Obsidian | Abhijeet&#39;s site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This guide will walk you through setting up a Hugo blog within your existing abhirudraa.github.io repository. We&rsquo;ll use GitHub Actions to automatically build and deploy your site whenever you push new changes.
+Prerequisites
+
+
+Hugo Installed: If you don&rsquo;t have Hugo, install the extended version. Follow the official guide: Install Hugo.
+
+
+Git Installed: You need Git for version control. Install Git.
+
+
+GitHub Repository: You already have https://github.com/Abhirudraa/abhirudraa.github.io.
+
+
+Step 1: Set Up Your Local Project
+First, we&rsquo;ll clone your repository and create the Hugo site structure within it.">
+    <meta name="generator" content="Hugo 0.150.1">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.2438bcafd7af9675c426d1a4afcd16cfff18e4e10f401071e45b5ccd3be40a0d.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://abhirudraa.github.io/blog/deploying-a-hugo-blog-with-github-actions-and-obsidian.html">
+    
+
+    <meta property="og:url" content="https://abhirudraa.github.io/blog/deploying-a-hugo-blog-with-github-actions-and-obsidian.html">
+  <meta property="og:site_name" content="Abhijeet&#39;s site">
+  <meta property="og:title" content="Deploying a Hugo Blog with GitHub Actions and Obsidian">
+  <meta property="og:description" content="This guide will walk you through setting up a Hugo blog within your existing abhirudraa.github.io repository. We’ll use GitHub Actions to automatically build and deploy your site whenever you push new changes.
+Prerequisites Hugo Installed: If you don’t have Hugo, install the extended version. Follow the official guide: Install Hugo.
+Git Installed: You need Git for version control. Install Git.
+GitHub Repository: You already have https://github.com/Abhirudraa/abhirudraa.github.io.
+Step 1: Set Up Your Local Project First, we’ll clone your repository and create the Hugo site structure within it.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-09-28T17:00:00+05:30">
+    <meta property="article:modified_time" content="2025-09-28T17:00:00+05:30">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="Obsidian">
+    <meta property="article:tag" content="Github-Actions">
+
+  <meta itemprop="name" content="Deploying a Hugo Blog with GitHub Actions and Obsidian">
+  <meta itemprop="description" content="This guide will walk you through setting up a Hugo blog within your existing abhirudraa.github.io repository. We’ll use GitHub Actions to automatically build and deploy your site whenever you push new changes.
+Prerequisites Hugo Installed: If you don’t have Hugo, install the extended version. Follow the official guide: Install Hugo.
+Git Installed: You need Git for version control. Install Git.
+GitHub Repository: You already have https://github.com/Abhirudraa/abhirudraa.github.io.
+Step 1: Set Up Your Local Project First, we’ll clone your repository and create the Hugo site structure within it.">
+  <meta itemprop="datePublished" content="2025-09-28T17:00:00+05:30">
+  <meta itemprop="dateModified" content="2025-09-28T17:00:00+05:30">
+  <meta itemprop="wordCount" content="672">
+  <meta itemprop="keywords" content="Hugo,Obsidian,Github-Actions">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Deploying a Hugo Blog with GitHub Actions and Obsidian">
+  <meta name="twitter:description" content="This guide will walk you through setting up a Hugo blog within your existing abhirudraa.github.io repository. We’ll use GitHub Actions to automatically build and deploy your site whenever you push new changes.
+Prerequisites Hugo Installed: If you don’t have Hugo, install the extended version. Follow the official guide: Install Hugo.
+Git Installed: You need Git for version control. Install Git.
+GitHub Repository: You already have https://github.com/Abhirudraa/abhirudraa.github.io.
+Step 1: Set Up Your Local Project First, we’ll clone your repository and create the Hugo site structure within it.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Abhijeet&#39;s site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Blogs
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Deploying a Hugo Blog with GitHub Actions and Obsidian</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-09-28T17:00:00+05:30">September 28, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>This guide will walk you through setting up a Hugo blog within your existing <code>abhirudraa.github.io</code> repository. We&rsquo;ll use GitHub Actions to automatically build and deploy your site whenever you push new changes.</p>
+<h3 id="prerequisites"><strong>Prerequisites</strong></h3>
+<ol>
+<li>
+<p><strong>Hugo Installed:</strong> If you don&rsquo;t have Hugo, install the <strong>extended</strong> version. Follow the official guide: <a href="https://gohugo.io/installation/" title="null">Install Hugo</a>.</p>
+</li>
+<li>
+<p><strong>Git Installed:</strong> You need Git for version control. <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" title="null">Install Git</a>.</p>
+</li>
+<li>
+<p><strong>GitHub Repository:</strong> You already have <code>https://github.com/Abhirudraa/abhirudraa.github.io</code>.</p>
+</li>
+</ol>
+<h3 id="step-1-set-up-your-local-project"><strong>Step 1: Set Up Your Local Project</strong></h3>
+<p>First, we&rsquo;ll clone your repository and create the Hugo site structure <em>within</em> it.</p>
+<ol>
+<li>
+<p><strong>Clone your repository:</strong></p>
+<pre tabindex="0"><code>git clone [https://github.com/Abhirudraa/abhirudraa.github.io.git](https://github.com/Abhirudraa/abhirudraa.github.io.git)
+</code></pre></li>
+<li>
+<p><strong>Navigate into the directory:</strong></p>
+<pre tabindex="0"><code>cd abhirudraa.github.io
+</code></pre></li>
+<li>
+<p>Initialize a Hugo site in the current directory:</p>
+<p>The &ndash;force flag is necessary because your directory already contains files. This command won&rsquo;t delete your existing files; it will just add the required Hugo folders (content, themes, static, etc.).</p>
+<pre tabindex="0"><code>hugo new site . --force
+</code></pre></li>
+<li>
+<p>Move your existing files to the static folder:</p>
+<p>Hugo copies everything from the static folder directly to the final website&rsquo;s root. This is how you preserve your existing index.html, intro.html, and images folder.</p>
+<pre tabindex="0"><code># Create the static directory if it doesn&#39;t exist
+mkdir -p static/images
+
+# Move your files
+git mv index.html static/
+git mv intro.html static/
+git mv images/* static/images/
+
+# You can now remove the old empty images directory
+rmdir images
+</code></pre></li>
+</ol>
+<h3 id="step-2-add-a-theme-and-configure-hugo"><strong>Step 2: Add a Theme and Configure Hugo</strong></h3>
+<p>Now, let&rsquo;s add a clean theme and configure Hugo to build your site correctly.</p>
+<ol>
+<li>
+<p>Add a theme (we&rsquo;ll use &lsquo;ananke&rsquo; as an example):</p>
+<p>We add the theme as a Git submodule, which is the recommended way.</p>
+<pre tabindex="0"><code>git submodule add [https://github.com/theNewDynamic/gohugo-theme-ananke.git](https://github.com/theNewDynamic/gohugo-theme-ananke.git) themes/ananke
+</code></pre></li>
+<li>
+<p>Configure Hugo:</p>
+<p>Create a hugo.toml file in the root of your project. Copy the content from the hugo.toml file I provided. This file tells Hugo your site&rsquo;s URL, title, and which theme to use.</p>
+</li>
+</ol>
+<h3 id="step-3-create-your-first-blog-post"><strong>Step 3: Create Your First Blog Post</strong></h3>
+<p>This is where your Obsidian workflow comes in. Hugo content lives in the <code>content</code> folder.</p>
+<ol>
+<li>
+<p>Create a new post:</p>
+<p>Run this command to create a new Markdown file with the correct template.</p>
+<pre tabindex="0"><code>hugo new content blog/indvspak.md
+</code></pre><p>This creates the file at <code>content/blog/indvspak.md</code>.</p>
+</li>
+<li>
+<p><strong>Edit the post in Obsidian:</strong></p>
+<ul>
+<li>
+<p>Open your <code>abhirudraa.github.io</code> folder as a Vault in Obsidian.</p>
+</li>
+<li>
+<p>Navigate to <code>content/blog/indvspak.md</code> and start writing!</p>
+</li>
+<li>
+<p><strong>IMPORTANT:</strong> In the file, you&rsquo;ll see &ldquo;front matter&rdquo; at the top. To make the post visible, change <code>draft: true</code> to <code>draft: false</code>.</p>
+</li>
+</ul>
+<pre tabindex="0"><code>---
+title: &#34;Ind vs Pak&#34;
+date: 2024-09-08T12:00:00+05:30
+draft: false  # &lt;-- Change this to false to publish!
+---
+
+Your blog content starts here...
+</code></pre></li>
+<li>
+<p>Test your site locally (Optional):</p>
+<p>To see a live preview of your site, run the Hugo server from your project&rsquo;s root directory.</p>
+<pre tabindex="0"><code>hugo server
+</code></pre><p>Then open <code>http://localhost:1313/</code> in your browser. Your blog will be at <code>http://localhost:1313/blog/</code>.</p>
+</li>
+</ol>
+<h3 id="step-4-set-up-automatic-deployment-with-github-actions"><strong>Step 4: Set Up Automatic Deployment with GitHub Actions</strong></h3>
+<p>This is the final step. We will add a workflow file that tells GitHub how to build and deploy your site automatically.</p>
+<ol>
+<li>
+<p><strong>Create the workflow directory:</strong></p>
+<pre tabindex="0"><code>mkdir -p .github/workflows
+</code></pre></li>
+<li>
+<p>Create the workflow file:</p>
+<p>Create a new file named deploy.yml inside the .github/workflows/ directory. Copy the contents from the deploy.yml file I provided into this new file.</p>
+</li>
+</ol>
+<h3 id="step-5-push-to-github-and-go-live"><strong>Step 5: Push to GitHub and Go Live!</strong></h3>
+<p>Now, commit all your changes and push them to GitHub. This will trigger the deployment process.</p>
+<ol>
+<li>
+<p><strong>Add, commit, and push your changes:</strong></p>
+<pre tabindex="0"><code>git add .
+git commit -m &#34;feat: Initial Hugo blog setup&#34;
+git push origin main
+</code></pre></li>
+<li>
+<p><strong>Configure GitHub Pages Branch:</strong></p>
+<ul>
+<li>
+<p>Go to your repository on GitHub: <code>https://github.com/Abhirudraa/abhirudraa.github.io</code></p>
+</li>
+<li>
+<p>Click on <strong>Settings</strong> &gt; <strong>Pages</strong>.</p>
+</li>
+<li>
+<p>Under &ldquo;Build and deployment&rdquo;, change the <strong>Source</strong> to <strong>GitHub Actions</strong>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="your-new-workflow"><strong>Your New Workflow</strong></h3>
+<p>That&rsquo;s it! Your setup is complete. From now on, your process for publishing a new blog post is simple:</p>
+<ol>
+<li>
+<p><strong>Write:</strong> Create a new <code>.md</code> file in the <code>content/blog/</code> folder using Obsidian. (You can also use the <code>hugo new content blog/your-title.md</code> command).</p>
+</li>
+<li>
+<p><strong>Publish:</strong> Make sure the post has <code>draft: false</code> in its front matter.</p>
+</li>
+<li>
+<p><strong>Push:</strong> Commit and push your changes to the <code>main</code> branch on GitHub.</p>
+</li>
+</ol>
+<p>GitHub Actions will automatically take care of the rest, and your new post will be live in a minute or two!</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/hugo/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Hugo</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/obsidian/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Obsidian</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/github-actions/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Github-Actions</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://abhirudraa.github.io/" >
+    &copy;  Abhijeet's site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
